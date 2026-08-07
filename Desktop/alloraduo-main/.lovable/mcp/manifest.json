@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "allora-duo-mcp",
+      "version": "0.1.0",
+      "title": "Allora Duo"
+    },
+    "tools": [
+      {
+        "name": "about_company",
+        "title": "About Allora Duo",
+        "description": "Institutional overview of Allora Duo: who we are, tagline, differentials, and website.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_solutions",
+        "title": "List Allora Duo solutions",
+        "description": "List the financial solutions offered by Allora Duo (credit for individuals, businesses, condominiums, and investment advisory).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_faq",
+        "title": "Get Allora Duo FAQ",
+        "description": "Return frequently asked questions and answers, optionally filtered by topic (condominios, pj, investimentos).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "topic": {
+              "default": "all",
+              "description": "Topic to filter FAQ entries by. Use 'all' to return every topic.",
+              "type": "string",
+              "enum": [
+                "condominios",
+                "pj",
+                "investimentos",
+                "all"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contacts",
+        "title": "Get Allora Duo contacts",
+        "description": "Return official contact channels for Allora Duo: email, Instagram, business hours, and WhatsApp numbers for credit and investment advisory.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
